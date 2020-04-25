@@ -852,6 +852,18 @@ class BaseOp(object):
         self.pod_annotations[name] = value
         return self
 
+
+    def add_pod_annotations(self, annotations: dict):
+        """Adds a dictionary of annotations to a pod's metadata.
+
+        Args:
+          annotations: A dictionary of annotations.
+        """
+
+        for (name, value) in annotations.items():
+            self.pod_annotations[name] = value
+        return self
+
     def add_pod_label(self, name: str, value: str):
         """Adds a pod's metadata label.
 
